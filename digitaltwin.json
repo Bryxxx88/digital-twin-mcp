@@ -14,30 +14,17 @@
       "facebook": "https://www.facebook.com/johnbryx.jovellanos88"
     }
   },
-  "salary_location": {
-    "current_salary": "Entry Level - Student",
-    "salary_expectations": "PHP 20,000 - PHP 30,000 based on role and responsibilities",
-    "location_preferences": [
-      "Philippines",
-      "Remote",
-      "Hybrid"
-    ],
-    "relocation_willing": true,
-    "remote_experience": "Experience with remote collaboration during academic projects",
-    "travel_availability": "Available for local travel as needed",
-    "work_authorization": "Filipino Citizen"
-  },
   "experience": [
     {
       "company": "St. Paul University Philippines",
-      "title": "Lead Developer - University Clearance Management System",
-      "duration": "Academic Year 2024-2025",
+      "title": "Co-Developer - University Clearance Management System",
+      "duration": "Academic Year 2025-2026",
       "company_context": "Major university project for academic institution",
-      "team_structure": "Development team lead managing project delivery",
+      "team_structure": "Development team collaboratively building the system",
       "achievements_star": [
         {
           "situation": "St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments.",
-          "task": "As the lead developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities.",
+          "task": "As a co-developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities.",
           "action": "I developed a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I implemented automated validation rules, created a role-based access system for different departments, integrated real-time notifications, and built an admin dashboard with decision-support analytics to identify bottlenecks.",
           "result": "Reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester."
         }
