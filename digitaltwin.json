@@ -25,8 +25,8 @@
         {
           "situation": "St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments.",
           "task": "As a co-developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities.",
-          "action": "I developed a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I implemented automated validation rules, created a role-based access system for different departments, integrated real-time notifications, and built an admin dashboard with decision-support analytics to identify bottlenecks.",
-          "result": "Reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester."
+          "action": "I collaborated with the team to develop a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I contributed to implementing automated validation rules, helped create a role-based access system for different departments, integrated real-time notifications, and assisted in building an admin dashboard with decision-support analytics to identify bottlenecks.",
+          "result": "Our team reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester."
         }
       ],
       "technical_skills_used": [
@@ -38,11 +38,11 @@
         "Bootstrap"
       ],
       "leadership_examples": [
-        "Led development team",
+        "Collaborated effectively with development team",
         "Coordinated with university administration",
-        "Managed project timeline and deliverables"
+        "Contributed to project timeline and deliverables"
       ],
-      "team_size_managed": 1
+      "team_size": 2
     },
     {
       "company": "AI Agent Developer Workshop",
@@ -293,9 +293,9 @@
     },
     {
       "id": "de65233f-6882-462b-b71c-c1a3a5160e0c",
-      "title": "Lead Developer - University Clearance Management System at St. Paul University Philippines",
+      "title": "Co-Developer - University Clearance Management System at St. Paul University Philippines",
       "type": "experience",
-      "content": "Experience at St. Paul University Philippines as Lead Developer - University Clearance Management System (Academic Year 2024-2025). SITUATION: St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments. TASK: As the lead developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities. ACTION: I developed a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I implemented automated validation rules, created a role-based access system for different departments, integrated real-time notifications, and built an admin dashboard with decision-support analytics to identify bottlenecks. RESULT: Reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester. Technical skills used: PHP, MySQL, JavaScript, HTML, CSS, Bootstrap. Leadership: Led development team, Coordinated with university administration, Managed project timeline and deliverables.",
+      "content": "Experience at St. Paul University Philippines as Co-Developer - University Clearance Management System (Academic Year 2025-2026). SITUATION: St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments. TASK: As a co-developer, I was tasked with collaborating on the design and implementation of a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities. ACTION: I collaborated with the team to develop a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I contributed to implementing automated validation rules, helped create a role-based access system for different departments, integrated real-time notifications, and assisted in building an admin dashboard with decision-support analytics to identify bottlenecks. RESULT: Our team reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester. Technical skills used: PHP, MySQL, JavaScript, HTML, CSS, Bootstrap. Collaboration: Worked effectively with development team, Coordinated with university administration, Contributed to project timeline and deliverables.",
       "metadata": {
         "category": "experience",
         "company": "St. Paul University Philippines",
