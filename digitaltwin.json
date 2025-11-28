@@ -1,0 +1,471 @@
+{
+  "personal": {
+    "name": "John Bryx Torralba Jovellanos",
+    "title": "4th Year BSIT Student (Major in Web Development)",
+    "location": "Philippines",
+    "current_year": 2025,
+    "academic_status": "Currently in 4th year (2025), graduating in 2026",
+    "summary": "Dedicated 4th-year BSIT student majoring in Web Development with hands-on experience in frontend, backend, and database-driven applications. Skilled in building responsive interfaces, scalable server logic, and intuitive user experiences.",
+    "elevator_pitch": "I am a graduating BSIT student specializing in web development, passionate about creating functional and user-friendly applications. I have experience working with modern web technologies, designing full-stack solutions, and collaborating effectively in team-based environments. I'm seeking opportunities to grow as a web developer and contribute to impactful projects.",
+    "contact": {
+      "email": "bryx.jovellanos@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/john-bryx-jovellanos-731872397/",
+      "github": "https://github.com/Bryxxx88",
+      "facebook": "https://www.facebook.com/johnbryx.jovellanos88"
+    }
+  },
+  "salary_location": {
+    "current_salary": "Entry Level - Student",
+    "salary_expectations": "PHP 20,000 - PHP 30,000 based on role and responsibilities",
+    "location_preferences": [
+      "Philippines",
+      "Remote",
+      "Hybrid"
+    ],
+    "relocation_willing": true,
+    "remote_experience": "Experience with remote collaboration during academic projects",
+    "travel_availability": "Available for local travel as needed",
+    "work_authorization": "Filipino Citizen"
+  },
+  "experience": [
+    {
+      "company": "St. Paul University Philippines",
+      "title": "Lead Developer - University Clearance Management System",
+      "duration": "Academic Year 2024-2025",
+      "company_context": "Major university project for academic institution",
+      "team_structure": "Development team lead managing project delivery",
+      "achievements_star": [
+        {
+          "situation": "St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments.",
+          "task": "As the lead developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities.",
+          "action": "I developed a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I implemented automated validation rules, created a role-based access system for different departments, integrated real-time notifications, and built an admin dashboard with decision-support analytics to identify bottlenecks.",
+          "result": "Reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester."
+        }
+      ],
+      "technical_skills_used": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ],
+      "leadership_examples": [
+        "Led development team",
+        "Coordinated with university administration",
+        "Managed project timeline and deliverables"
+      ],
+      "team_size_managed": 1
+    },
+    {
+      "company": "AI Agent Developer Workshop",
+      "title": "Developer - Digital Twin MCP Server",
+      "duration": "2025",
+      "company_context": "AI Agents Workshop training program",
+      "team_structure": "Individual project with mentor guidance",
+      "achievements_star": [
+        {
+          "situation": "Job seekers struggle to prepare for technical interviews and often fail to articulate their experience effectively to recruiters, leading to missed opportunities despite having strong qualifications.",
+          "task": "I undertook building an AI-powered Digital Twin system as part of the AI Agent Developer Workshop to create a 24/7 available AI assistant that can answer questions about my professional background using advanced RAG (Retrieval-Augmented Generation) technology.",
+          "action": "I implemented a complete RAG pipeline using Python with Upstash Vector for semantic search and Groq's LLaMA model for natural language generation. I structured my professional profile using STAR methodology, configured local and cloud embedding models for flexibility, and built a Next.js MCP server for multi-platform integration. The system includes intelligent fallback responses and handles edge cases professionally.",
+          "result": "Created a production-ready Digital Twin that provides accurate, context-aware responses about my experience 24/7. Successfully deployed the system with both local and cloud modes, achieving sub-second response times. The project demonstrates full-stack AI development skills including vector databases, LLM integration, and modern web deployment - directly applicable to enterprise AI agent development roles."
+        }
+      ],
+      "technical_skills_used": [
+        "Python",
+        "Upstash Vector",
+        "Groq API",
+        "Next.js",
+        "TypeScript",
+        "RAG"
+      ],
+      "leadership_examples": [
+        "Self-directed learning",
+        "Problem-solving",
+        "Technical documentation"
+      ],
+      "team_size_managed": 1
+    }
+  ],
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        {
+          "language": "PHP",
+          "years": 2,
+          "proficiency": "Intermediate",
+          "frameworks": [
+            "Laravel basics"
+          ]
+        },
+        {
+          "language": "JavaScript",
+          "years": 2,
+          "proficiency": "Intermediate",
+          "frameworks": [
+            "Node.js",
+            "Next.js",
+            "React basics"
+          ]
+        },
+        {
+          "language": "Python",
+          "years": 1,
+          "proficiency": "Beginner-Intermediate",
+          "frameworks": [
+            "FastAPI basics"
+          ]
+        },
+        {
+          "language": "HTML/CSS",
+          "years": 3,
+          "proficiency": "Advanced",
+          "frameworks": [
+            "Bootstrap",
+            "Tailwind CSS"
+          ]
+        }
+      ],
+      "databases": [
+        "MySQL (2 years)",
+        "PostgreSQL (1 year)",
+        "MongoDB (beginner)"
+      ],
+      "cloud_platforms": [
+        "Vercel (1 year)",
+        "Firebase (beginner)"
+      ],
+      "ai_ml": [
+        "RAG systems",
+        "Vector databases",
+        "LLM integration",
+        "Groq API",
+        "Upstash Vector"
+      ]
+    },
+    "soft_skills": [
+      "Problem-solving",
+      "Team Collaboration",
+      "Self-Learning",
+      "Communication",
+      "Project Management"
+    ],
+    "certifications": []
+  },
+  "education": {
+    "university": "St. Paul University Philippines",
+    "degree": "Bachelor of Science in Information Technology",
+    "major": "Web Development",
+    "year_level": "4th Year (Graduating)",
+    "graduation_year": 2026,
+    "gpa": "Good Standing",
+    "relevant_coursework": [
+      "Web Development",
+      "Database Management",
+      "Human-Computer Interaction",
+      "Information Systems"
+    ],
+    "thesis_project": "University Clearance Management System with Decision Support"
+  },
+  "projects_portfolio": [
+    {
+      "name": "University Clearance Management System with Decision Support",
+      "description": "The University Clearance Management System with Decision Support is designed to streamline and automate the clearance process of students at St. Paul University Philippines. It integrates automated validation, real-time clearance tracking, and decision-support logic to reduce processing time and improve administrative efficiency.",
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ],
+      "impact": "Significantly reduced manual processing and improved transparency for students and departments.",
+      "github_url": "",
+      "live_demo": ""
+    },
+    {
+      "name": "Digital Twin MCP Server",
+      "description": "AI-powered interview preparation system using RAG technology and Groq LLM for intelligent responses.",
+      "technologies": [
+        "Next.js",
+        "RAG",
+        "GROQ",
+        "Typescript",
+        "Upstash Vector",
+        "Python"
+      ],
+      "impact": "Questions and feedback aligned to: specific role, company, CV/resume, portfolio, or even a job posting link.",
+      "github_url": "",
+      "live_demo": ""
+    }
+  ],
+  "career_goals": {
+    "short_term": "Secure an internship or entry-level role in web development focusing on frontend, backend, or full-stack development.",
+    "long_term": "Become a full-stack web developer specializing in modern frameworks and scalable software solutions.",
+    "learning_focus": [
+      "Next.js",
+      "API development",
+      "Database design",
+      "Advanced JavaScript",
+      "UI/UX principles",
+      "AI/ML integration"
+    ],
+    "industries_interested": [
+      "Web Development",
+      "IT Services",
+      "Software Development",
+      "Tech Startups",
+      "AI/ML"
+    ]
+  },
+  "interview_prep": {
+    "common_questions": {
+      "behavioral": [
+        "Tell me about your University Clearance Management System project",
+        "Describe a challenging technical problem you solved",
+        "How do you approach learning new technologies?"
+      ],
+      "technical": [
+        "Explain your approach to database design",
+        "How do you ensure code quality in your projects?",
+        "Walk me through your full-stack development process"
+      ],
+      "situational": [
+        "How would you handle a critical bug in production?",
+        "Describe how you would collaborate with a remote team",
+        "How do you prioritize features in a project?"
+      ],
+      "company_research": {
+        "research_areas": [
+          "Company culture",
+          "Tech stack",
+          "Team structure",
+          "Growth opportunities"
+        ],
+        "preparation_questions": [
+          "What technologies does your team use?",
+          "What does a typical day look like?",
+          "How do you support junior developers?"
+        ]
+      }
+    },
+    "weakness_mitigation": [
+      {
+        "weakness": "Limited professional work experience",
+        "mitigation": "Compensated with strong academic projects, self-learning initiatives, and hands-on experience with modern technologies including AI/ML systems"
+      },
+      {
+        "weakness": "Beginner in some advanced frameworks",
+        "mitigation": "Quick learner with proven track record of picking up new technologies rapidly, as demonstrated in AI Agent Developer Workshop"
+      }
+    ]
+  },
+  "professional_development": {
+    "recent_learning": [
+      "RAG systems implementation",
+      "Vector databases",
+      "MCP protocol development",
+      "AI/ML integration",
+      "Next.js 15"
+    ],
+    "conferences_attended": [],
+    "publications": [],
+    "open_source": [
+      "GitHub projects",
+      "Learning repositories"
+    ]
+  },
+  "content_chunks": [
+    {
+      "id": "55803c31-6ac3-4cda-b714-d23a16f4de66",
+      "title": "Personal Information & Contact",
+      "type": "personal",
+      "content": "John Bryx Torralba Jovellanos is a 4th Year BSIT Student (Major in Web Development) based in Philippines. Dedicated 4th-year BSIT student majoring in Web Development with hands-on experience in frontend, backend, and database-driven applications. Skilled in building responsive interfaces, scalable server logic, and intuitive user experiences. I am a graduating BSIT student specializing in web development, passionate about creating functional and user-friendly applications. I have experience working with modern web technologies, designing full-stack solutions, and collaborating effectively in team-based environments. I'm seeking opportunities to grow as a web developer and contribute to impactful projects.",
+      "metadata": {
+        "category": "personal",
+        "tags": [
+          "introduction",
+          "summary",
+          "location"
+        ]
+      }
+    },
+    {
+      "id": "c236fea6-907f-4a3b-9f15-a43f4e9e3c7a",
+      "title": "Education Background",
+      "type": "education",
+      "content": "Education: Bachelor of Science in Information Technology in Web Development from St. Paul University Philippines. Currently in 4th Year (Graduating), graduating in 2026. Relevant coursework includes: Web Development, Database Management, Human-Computer Interaction, Information Systems. Thesis project: University Clearance Management System with Decision Support.",
+      "metadata": {
+        "category": "education",
+        "tags": [
+          "university",
+          "degree",
+          "coursework"
+        ]
+      }
+    },
+    {
+      "id": "de65233f-6882-462b-b71c-c1a3a5160e0c",
+      "title": "Lead Developer - University Clearance Management System at St. Paul University Philippines",
+      "type": "experience",
+      "content": "Experience at St. Paul University Philippines as Lead Developer - University Clearance Management System (Academic Year 2024-2025). SITUATION: St. Paul University Philippines had a manual, paper-based clearance process that took weeks to complete, causing delays for graduating students and creating administrative bottlenecks across multiple departments. TASK: As the lead developer, I was tasked with designing and implementing a web-based system to automate the entire clearance workflow, integrate decision support logic, and provide real-time tracking capabilities. ACTION: I developed a full-stack solution using PHP and MySQL with a Bootstrap-responsive frontend. I implemented automated validation rules, created a role-based access system for different departments, integrated real-time notifications, and built an admin dashboard with decision-support analytics to identify bottlenecks. RESULT: Reduced average clearance processing time from 3 weeks to 3 days (90% improvement), eliminated paper-based tracking errors, increased student satisfaction scores by 85%, and provided administrators with data-driven insights for resource allocation. The system now serves 500+ students per semester. Technical skills used: PHP, MySQL, JavaScript, HTML, CSS, Bootstrap. Leadership: Led development team, Coordinated with university administration, Managed project timeline and deliverables.",
+      "metadata": {
+        "category": "experience",
+        "company": "St. Paul University Philippines",
+        "tags": [
+          "work-experience",
+          "star-method",
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ]
+      }
+    },
+    {
+      "id": "9b1f30e7-3848-4a74-b311-8f60bfe51829",
+      "title": "Developer - Digital Twin MCP Server at AI Agent Developer Workshop",
+      "type": "experience",
+      "content": "Experience at AI Agent Developer Workshop as Developer - Digital Twin MCP Server (2025). SITUATION: Job seekers struggle to prepare for technical interviews and often fail to articulate their experience effectively to recruiters, leading to missed opportunities despite having strong qualifications. TASK: I undertook building an AI-powered Digital Twin system as part of the AI Agent Developer Workshop to create a 24/7 available AI assistant that can answer questions about my professional background using advanced RAG (Retrieval-Augmented Generation) technology. ACTION: I implemented a complete RAG pipeline using Python with Upstash Vector for semantic search and Groq's LLaMA model for natural language generation. I structured my professional profile using STAR methodology, configured local and cloud embedding models for flexibility, and built a Next.js MCP server for multi-platform integration. The system includes intelligent fallback responses and handles edge cases professionally. RESULT: Created a production-ready Digital Twin that provides accurate, context-aware responses about my experience 24/7. Successfully deployed the system with both local and cloud modes, achieving sub-second response times. The project demonstrates full-stack AI development skills including vector databases, LLM integration, and modern web deployment - directly applicable to enterprise AI agent development roles. Technical skills used: Python, Upstash Vector, Groq API, Next.js, TypeScript, RAG. Leadership: Self-directed learning, Problem-solving, Technical documentation.",
+      "metadata": {
+        "category": "experience",
+        "company": "AI Agent Developer Workshop",
+        "tags": [
+          "work-experience",
+          "star-method",
+          "Python",
+          "Upstash Vector",
+          "Groq API",
+          "Next.js",
+          "TypeScript",
+          "RAG"
+        ]
+      }
+    },
+    {
+      "id": "e12bc8f1-821d-4fe3-a5ae-42a7dcaa6cef",
+      "title": "Technical Skills & Expertise",
+      "type": "skills",
+      "content": "Technical Skills: Programming: PHP (Intermediate, 2 years) with Laravel basics; JavaScript (Intermediate, 2 years) with Node.js, Next.js, React basics; Python (Beginner-Intermediate, 1 years) with FastAPI basics; HTML/CSS (Advanced, 3 years) with Bootstrap, Tailwind CSS. Databases: MySQL (2 years), PostgreSQL (1 year), MongoDB (beginner). Cloud & Deployment: Vercel (1 year), Firebase (beginner). AI/ML: RAG systems, Vector databases, LLM integration, Groq API, Upstash Vector.",
+      "metadata": {
+        "category": "technical-skills",
+        "tags": [
+          "programming",
+          "databases",
+          "frameworks",
+          "ai-ml"
+        ]
+      }
+    },
+    {
+      "id": "eeaca438-fda7-44ea-bda2-ed3bedabccef",
+      "title": "Soft Skills & Professional Qualities",
+      "type": "skills",
+      "content": "Professional soft skills: Problem-solving, Team Collaboration, Self-Learning, Communication, Project Management. These skills have been developed through academic projects, team collaborations, and self-directed learning.",
+      "metadata": {
+        "category": "soft-skills",
+        "tags": [
+          "communication",
+          "teamwork",
+          "leadership"
+        ]
+      }
+    },
+    {
+      "id": "721781ea-c544-45d9-87e3-6e37eeb5ce36",
+      "title": "University Clearance Management System with Decision Support",
+      "type": "project",
+      "content": "Project: University Clearance Management System with Decision Support. The University Clearance Management System with Decision Support is designed to streamline and automate the clearance process of students at St. Paul University Philippines. It integrates automated validation, real-time clearance tracking, and decision-support logic to reduce processing time and improve administrative efficiency. Technologies: PHP, MySQL, JavaScript, HTML, CSS, Bootstrap. Impact: Significantly reduced manual processing and improved transparency for students and departments.",
+      "metadata": {
+        "category": "projects",
+        "tags": [
+          "portfolio",
+          "project",
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ]
+      }
+    },
+    {
+      "id": "4631e5e4-b00a-43c7-a230-5273a7d77081",
+      "title": "Digital Twin MCP Server",
+      "type": "project",
+      "content": "Project: Digital Twin MCP Server. AI-powered interview preparation system using RAG technology and Groq LLM for intelligent responses. Technologies: Next.js, RAG, GROQ, Typescript, Upstash Vector, Python. Impact: Questions and feedback aligned to: specific role, company, CV/resume, portfolio, or even a job posting link.",
+      "metadata": {
+        "category": "projects",
+        "tags": [
+          "portfolio",
+          "project",
+          "Next.js",
+          "RAG",
+          "GROQ",
+          "Typescript",
+          "Upstash Vector",
+          "Python"
+        ]
+      }
+    },
+    {
+      "id": "d55b1334-5cba-4246-baee-69bad7922452",
+      "title": "Career Goals & Aspirations",
+      "type": "goals",
+      "content": "Career Goals - Short-term: Secure an internship or entry-level role in web development focusing on frontend, backend, or full-stack development. Long-term: Become a full-stack web developer specializing in modern frameworks and scalable software solutions. Current learning focus: Next.js, API development, Database design, Advanced JavaScript, UI/UX principles, AI/ML integration. Industries of interest: Web Development, IT Services, Software Development, Tech Startups, AI/ML.",
+      "metadata": {
+        "category": "career-goals",
+        "tags": [
+          "future",
+          "learning",
+          "growth"
+        ]
+      }
+    },
+    {
+      "id": "42d2dab0-c4cf-4a2c-baaf-540037d7bac2",
+      "title": "Salary & Location Preferences",
+      "type": "preferences",
+      "content": "Salary expectations: PHP 20,000 - PHP 30,000 based on role and responsibilities. Location preferences: Philippines, Remote, Hybrid. Relocation willing: Yes. Remote experience: Experience with remote collaboration during academic projects. Travel availability: Available for local travel as needed.",
+      "metadata": {
+        "category": "compensation",
+        "tags": [
+          "salary",
+          "location",
+          "remote"
+        ]
+      }
+    },
+    {
+      "id": "040b3365-9830-4119-9794-3a164fd0f566",
+      "title": "Interview Strategy - Limited professional work experience",
+      "type": "interview-prep",
+      "content": "Addressing potential concern: Limited professional work experience. Mitigation: Compensated with strong academic projects, self-learning initiatives, and hands-on experience with modern technologies including AI/ML systems",
+      "metadata": {
+        "category": "interview-preparation",
+        "tags": [
+          "weakness",
+          "mitigation",
+          "strategy"
+        ]
+      }
+    },
+    {
+      "id": "c961fd7b-5a52-4f20-92ee-f682a0f2ac91",
+      "title": "Interview Strategy - Beginner in some advanced frameworks",
+      "type": "interview-prep",
+      "content": "Addressing potential concern: Beginner in some advanced frameworks. Mitigation: Quick learner with proven track record of picking up new technologies rapidly, as demonstrated in AI Agent Developer Workshop",
+      "metadata": {
+        "category": "interview-preparation",
+        "tags": [
+          "weakness",
+          "mitigation",
+          "strategy"
+        ]
+      }
+    }
+  ]
+}

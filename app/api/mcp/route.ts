@@ -31,7 +31,7 @@ async function queryProfile(question: string): Promise<string> {
     // Load profile from JSON file
     const fs = require('fs');
     const path = require('path');
-    const profilePath = path.join(process.cwd(), '..', 'digitaltwin.json');
+    const profilePath = path.join(process.cwd(), 'digitaltwin.json');
     const profile = JSON.parse(fs.readFileSync(profilePath, 'utf-8'));
 
     // Extract key sections
