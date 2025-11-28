@@ -130,6 +130,32 @@
         "Upstash Vector"
       ]
     },
+    "skill_categories": [
+      {
+        "category": "Frontend Development",
+        "description": "Creating responsive, accessible interfaces using React, Next.js, HTML5, CSS3, and modern JavaScript frameworks."
+      },
+      {
+        "category": "Backend Development",
+        "description": "Building scalable server architectures using Node.js, Express, REST APIs, and MVC design principles."
+      },
+      {
+        "category": "Database Management",
+        "description": "Designing efficient data structures and managing relational & non-relational databases using MySQL, PostgreSQL, and MongoDB."
+      },
+      {
+        "category": "Development Tools",
+        "description": "Skilled in Git version control, modern IDEs, CI/CD basics, and cloud deployment platforms like Vercel and Firebase."
+      },
+      {
+        "category": "UI/UX Design",
+        "description": "Crafting intuitive user experiences with attention to layout, accessibility, design consistency, and visual hierarchy."
+      },
+      {
+        "category": "Collaboration",
+        "description": "Strong communication, teamwork, agile practices, and continuous learning to support effective group project performance."
+      }
+    ],
     "soft_skills": [
       "Problem-solving",
       "Team Collaboration",
@@ -357,6 +383,23 @@
           "communication",
           "teamwork",
           "leadership"
+        ]
+      }
+    },
+    {
+      "id": "a7f8e9d0-b1c2-4d3e-9f4a-5b6c7d8e9f0a",
+      "title": "Skill Categories & Expertise Areas",
+      "type": "skills",
+      "content": "Skill Categories: Frontend Development - Creating responsive, accessible interfaces using React, Next.js, HTML5, CSS3, and modern JavaScript frameworks. Backend Development - Building scalable server architectures using Node.js, Express, REST APIs, and MVC design principles. Database Management - Designing efficient data structures and managing relational & non-relational databases using MySQL, PostgreSQL, and MongoDB. Development Tools - Skilled in Git version control, modern IDEs, CI/CD basics, and cloud deployment platforms like Vercel and Firebase. UI/UX Design - Crafting intuitive user experiences with attention to layout, accessibility, design consistency, and visual hierarchy. Collaboration - Strong communication, teamwork, agile practices, and continuous learning to support effective group project performance.",
+      "metadata": {
+        "category": "skill-categories",
+        "tags": [
+          "frontend",
+          "backend",
+          "database",
+          "tools",
+          "ui-ux",
+          "collaboration"
         ]
       }
     },
