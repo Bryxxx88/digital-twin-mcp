@@ -1,8 +1,6 @@
 // /app/DigitalTwinChat.tsx
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -10,10 +8,6 @@ interface Message {
 }
 
 export default function DigitalTwinChat() {
-  const { data: session, status } = useSession({
-    required: false // Don't block rendering if not authenticated
-  })
-  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
@@ -196,12 +190,6 @@ export default function DigitalTwinChat() {
   }
 
   const handleLauncherClick = () => {
-    if (status === 'unauthenticated') {
-      // Redirect to sign in when user tries to use the chat
-      router.push('/signin')
-      return
-    }
-    // Only open chat if authenticated
     setIsOpen(true)
   }
 
