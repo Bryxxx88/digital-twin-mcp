@@ -15,6 +15,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [isDark, setIsDark] = useState(true)
   const [activeSection, setActiveSection] = useState('home')
+  const [isLoggedIn, setIsLoggedIn] = useState(false) // Placeholder for auth state
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -78,14 +79,6 @@ export default function Nav() {
     <header className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-inner">
         <div className="nav-left">
-          <button
-            className="theme-toggle"
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            <span>{isDark ? '◐' : '◑'}</span>
-          </button>
           <span className="nav-left-text">John Bryx Torralba Jovellanos</span>
           <span className="nav-left-binary">01001010 01000010 01001010</span>
         </div>
@@ -108,6 +101,23 @@ export default function Nav() {
               )
             })}
           </nav>
+
+          <button
+            className="nav-auth-btn"
+            onClick={() => setIsLoggedIn(!isLoggedIn)}
+            aria-label={isLoggedIn ? 'Log out' : 'Log in'}
+          >
+            {isLoggedIn ? 'Log out' : 'Log in'}
+          </button>
+
+          <button
+            className="theme-toggle"
+            aria-label="Toggle theme"
+            onClick={toggleTheme}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <span>{isDark ? '◐' : '◑'}</span>
+          </button>
 
           <button
             className="nav-hamburger"
