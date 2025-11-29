@@ -5,7 +5,7 @@
     "location": "Philippines",
     "current_year": 2025,
     "academic_status": "Currently in 4th year (2025), graduating in 2026",
-    "summary": "Dedicated 4th-year BSIT student majoring in Web Development with hands-on experience in frontend, backend, and database-driven applications. Skilled in building responsive interfaces, scalable server logic, and intuitive user experiences.",
+    "summary": "I'm a passionate IT student specializing in Website and Full-Stack Development at St. Paul University Philippines. My journey in technology is driven by a commitment to creating meaningful digital solutions that make a difference. I thrive on transforming complex challenges into elegant, user-centric applications that deliver real value.",
     "elevator_pitch": "I am a graduating BSIT student specializing in web development, passionate about creating functional and user-friendly applications. I have experience working with modern web technologies, designing full-stack solutions, and collaborating effectively in team-based environments. I'm seeking opportunities to grow as a web developer and contribute to impactful projects.",
     "contact": {
       "email": "bryx.jovellanos@gmail.com",
@@ -152,8 +152,12 @@
         "description": "Crafting intuitive user experiences with attention to layout, accessibility, design consistency, and visual hierarchy."
       },
       {
-        "category": "Collaboration",
-        "description": "Strong communication, teamwork, agile practices, and continuous learning to support effective group project performance."
+        "category": "AI/ML Development",
+        "description": "Building intelligent systems with RAG architecture, vector databases, LLM integration, Groq API, and Upstash Vector for semantic search and natural language processing."
+      },
+      {
+        "category": "Professional Skills",
+        "description": "Problem-solving, team collaboration, self-learning, communication, and project management developed through academic projects and real-world applications."
       }
     ],
     "soft_skills": [
@@ -178,12 +182,18 @@
       "Human-Computer Interaction",
       "Information Systems"
     ],
-    "thesis_project": "University Clearance Management System with Decision Support"
+    "thesis_project": "University Clearance Management System with Decision Support",
+    "expertise_areas": [
+      "Website Development",
+      "Full Stack Development",
+      "UI/UX Design"
+    ],
+    "philosophy": "Building accessible, intuitive interfaces while continuously evolving through emerging technologies."
   },
   "projects_portfolio": [
     {
       "name": "University Clearance Management System with Decision Support",
-      "description": "The University Clearance Management System with Decision Support is designed to streamline and automate the clearance process of students at St. Paul University Philippines. It integrates automated validation, real-time clearance tracking, and decision-support logic to reduce processing time and improve administrative efficiency.",
+      "description": "Full-stack web application for automating university clearance workflows with decision support logic, featuring automated validation, real-time tracking, role-based access control, and responsive Bootstrap interface to reduce processing time and enhance administrative efficiency.",
       "technologies": [
         "PHP",
         "MySQL",
@@ -198,7 +208,7 @@
     },
     {
       "name": "Digital Twin MCP Server",
-      "description": "AI-powered interview preparation system using RAG technology and Groq LLM for intelligent responses.",
+      "description": "AI-powered intelligent career assistant system leveraging RAG architecture and Groq LLM, featuring real-time conversational interface with voice input/output capabilities, persistent chat history, and responsive Next.js design for 24/7 professional information retrieval.",
       "technologies": [
         "Next.js",
         "RAG",
@@ -207,7 +217,7 @@
         "Upstash Vector",
         "Python"
       ],
-      "impact": "Questions and feedback aligned to: specific role, company, CV/resume, portfolio, or even a job posting link.",
+      "impact": "Provides 24/7 automated interview preparation and professional information retrieval with sub-second response times, demonstrating full-stack AI development capabilities including vector databases, LLM integration, and modern web deployment.",
       "github_url": "",
       "live_demo": ""
     }
