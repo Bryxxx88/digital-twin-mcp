@@ -21,10 +21,6 @@ export default function Footer() {
               <span className="tech-desc">RAG Database</span>
             </div>
             <div className="tech-item">
-              <span className="tech-name">NextAuth.js</span>
-              <span className="tech-desc">Authentication</span>
-            </div>
-            <div className="tech-item">
               <span className="tech-name">Vercel</span>
               <span className="tech-desc">Deployment</span>
             </div>
