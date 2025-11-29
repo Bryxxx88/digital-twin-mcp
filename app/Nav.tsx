@@ -103,7 +103,7 @@ export default function Nav() {
           </nav>
 
           <button
-            className="nav-auth-btn"
+            className={`nav-auth-btn ${isLoggedIn ? 'logged-in' : ''}`}
             onClick={() => setIsLoggedIn(!isLoggedIn)}
             aria-label={isLoggedIn ? 'Log out' : 'Log in'}
           >

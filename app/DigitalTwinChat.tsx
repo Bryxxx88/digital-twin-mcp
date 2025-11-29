@@ -10,6 +10,7 @@ interface Message {
 export default function DigitalTwinChat() {
   const [isOpen, setIsOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
+  const [showHistory, setShowHistory] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
@@ -21,14 +22,128 @@ export default function DigitalTwinChat() {
   const [isTyping, setIsTyping] = useState(false)
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [usedQuestions, setUsedQuestions] = useState<Set<string>>(new Set())
+  const [isSpeaking, setIsSpeaking] = useState(false)
+  const [currentSpeakingIndex, setCurrentSpeakingIndex] = useState<number | null>(null)
+  const [showVoiceSettings, setShowVoiceSettings] = useState(false)
+  const [voiceRate, setVoiceRate] = useState(0.9)
+  const [selectedVoice, setSelectedVoice] = useState<SpeechSynthesisVoice | null>(null)
+  const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([])
+  const [isListening, setIsListening] = useState(false)
   const latestUserMessageRef = useRef<HTMLDivElement>(null)
+  const speechSynthesisRef = useRef<SpeechSynthesisUtterance | null>(null)
+  const recognitionRef = useRef<any>(null)
   
+  // Initialize speech recognition
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+      if (SpeechRecognition) {
+        const recognition = new SpeechRecognition()
+        recognition.continuous = false
+        recognition.interimResults = false
+        recognition.lang = 'en-US'
+        
+        recognition.onstart = () => {
+          console.log('Speech recognition started')
+        }
+        
+        recognition.onresult = (event: any) => {
+          console.log('Speech recognition result received')
+          const transcript = event.results[0][0].transcript
+          console.log('Transcript:', transcript)
+          setInput(transcript)
+        }
+        
+        recognition.onerror = (event: any) => {
+          console.error('Speech recognition error:', event.error)
+          setIsListening(false)
+        }
+        
+        recognition.onend = () => {
+          console.log('Speech recognition ended')
+          setIsListening(false)
+        }
+        
+        recognitionRef.current = recognition
+      } else {
+        console.warn('Speech recognition not supported in this browser')
+        alert('Speech recognition is not supported in your browser. Please use Chrome, Edge, or Safari.')
+      }
+    }
+    
+    return () => {
+      if (recognitionRef.current) {
+        try {
+          recognitionRef.current.stop()
+        } catch (e) {
+          console.log('Error stopping recognition:', e)
+        }
+      }
+    }
+  }, [])
+
+  // Load available voices
+  useEffect(() => {
+    const loadVoices = () => {
+      const voices = window.speechSynthesis.getVoices()
+      setAvailableVoices(voices)
+      // Try to select an English voice by default
+      const englishVoice = voices.find(v => v.lang.startsWith('en-'))
+      if (englishVoice) {
+        setSelectedVoice(englishVoice)
+      }
+    }
+    
+    loadVoices()
+    // Chrome loads voices asynchronously
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = loadVoices
+    }
+  }, [])
+
+  // Load chat history from localStorage on mount
+  useEffect(() => {
+    const savedMessages = localStorage.getItem('chatHistory')
+    if (savedMessages) {
+      try {
+        const parsed = JSON.parse(savedMessages)
+        setMessages(parsed)
+      } catch (error) {
+        console.error('Failed to load chat history:', error)
+      }
+    }
+  }, [])
+
+  // Save messages to localStorage whenever they change
+  useEffect(() => {
+    if (messages.length > 1) { // Only save if there are more than just the initial message
+      localStorage.setItem('chatHistory', JSON.stringify(messages))
+    }
+  }, [messages])
+
   const handleClose = () => {
+    // Stop any ongoing speech
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel()
+      setIsSpeaking(false)
+      setCurrentSpeakingIndex(null)
+    }
+    
     setIsClosing(true)
     setTimeout(() => {
       setIsOpen(false)
       setIsClosing(false)
     }, 400) // Match animation duration
+  }
+
+  const clearHistory = () => {
+    const initialMessage = {
+      role: 'assistant' as const,
+      content: "Hi! I'm John Bryx's AI assistant. Ask me anything about his experience, skills, or projects."
+    }
+    setMessages([initialMessage])
+    localStorage.removeItem('chatHistory')
+    setShowHistory(false)
   }
   
   // Auto-scroll to latest user message whenever messages change
@@ -193,6 +308,83 @@ export default function DigitalTwinChat() {
     setIsOpen(true)
   }
 
+  const speakMessage = (text: string, messageIndex: number) => {
+    // Stop any ongoing speech
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel()
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text)
+    speechSynthesisRef.current = utterance
+    
+    // Configure voice settings
+    utterance.rate = voiceRate
+    utterance.pitch = 1
+    utterance.volume = 1
+    if (selectedVoice) {
+      utterance.voice = selectedVoice
+    }
+    
+    utterance.onstart = () => {
+      setIsSpeaking(true)
+      setCurrentSpeakingIndex(messageIndex)
+    }
+    
+    utterance.onend = () => {
+      setIsSpeaking(false)
+      setCurrentSpeakingIndex(null)
+    }
+    
+    utterance.onerror = () => {
+      setIsSpeaking(false)
+      setCurrentSpeakingIndex(null)
+    }
+    
+    window.speechSynthesis.speak(utterance)
+  }
+
+  const stopSpeaking = () => {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel()
+      setIsSpeaking(false)
+      setCurrentSpeakingIndex(null)
+    }
+  }
+
+  const startListening = () => {
+    if (recognitionRef.current && !isListening) {
+      try {
+        setIsListening(true)
+        recognitionRef.current.start()
+        console.log('Starting speech recognition...')
+      } catch (error) {
+        console.error('Failed to start recognition:', error)
+        setIsListening(false)
+      }
+    }
+  }
+
+  const stopListening = () => {
+    if (recognitionRef.current) {
+      try {
+        setIsListening(false)
+        recognitionRef.current.stop()
+        console.log('Stopping speech recognition...')
+      } catch (error) {
+        console.error('Failed to stop recognition:', error)
+      }
+    }
+  }
+
+  // Cleanup speech on unmount
+  useEffect(() => {
+    return () => {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel()
+      }
+    }
+  }, [])
+
   return (
     <>
       {/* Chat Launcher */}
@@ -222,14 +414,135 @@ export default function DigitalTwinChat() {
                 <span>Online</span>
               </div>
             </div>
-            <button 
-              className="chat-close-btn"
-              onClick={handleClose}
-              aria-label="Close chat"
-            >
-              ✕
-            </button>
+            <div className="chat-header-actions">
+              <button 
+                className="chat-history-btn"
+                onClick={() => {
+                  setShowHistory(!showHistory)
+                  setShowVoiceSettings(false)
+                }}
+                aria-label="Chat history"
+                title="Chat history"
+              >
+                ⋮
+              </button>
+              <button 
+                className="chat-voice-settings-btn"
+                onClick={() => {
+                  setShowVoiceSettings(!showVoiceSettings)
+                  setShowHistory(false)
+                }}
+                aria-label="Voice settings"
+                title="Voice settings"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+              </button>
+              <button 
+                className="chat-close-btn"
+                onClick={handleClose}
+                aria-label="Close chat"
+              >
+                ✕
+              </button>
+            </div>
           </div>
+
+          {showHistory && (
+            <div className="chat-history-panel">
+              <div className="chat-history-header">
+                <h3>Chat History</h3>
+                <button 
+                  className="close-history-btn"
+                  onClick={() => setShowHistory(false)}
+                  aria-label="Close history"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="chat-history-content">
+                {messages.length <= 1 ? (
+                  <p className="no-history">No chat history yet. Start a conversation!</p>
+                ) : (
+                  messages.map((message, index) => (
+                    <div key={index} className={`history-message ${message.role}`}>
+                      <div className="history-message-label">
+                        {message.role === 'user' ? 'You' : 'Digital Twin'}
+                      </div>
+                      <div className="history-message-text">
+                        {message.content}
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+              <div className="chat-history-footer">
+                <button 
+                  className="clear-history-btn"
+                  onClick={clearHistory}
+                >
+                  Clear Chat History
+                </button>
+              </div>
+            </div>
+          )}
+
+          {showVoiceSettings && (
+            <div className="chat-voice-settings-panel">
+              <div className="chat-voice-settings-header">
+                <h3>Voice Settings</h3>
+                <button 
+                  className="close-voice-settings-btn"
+                  onClick={() => setShowVoiceSettings(false)}
+                  aria-label="Close voice settings"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="chat-voice-settings-content">
+                <div className="voice-setting-group">
+                  <label htmlFor="voiceSpeed">Speech Speed: {voiceRate.toFixed(1)}x</label>
+                  <input
+                    id="voiceSpeed"
+                    type="range"
+                    min="0.5"
+                    max="2"
+                    step="0.1"
+                    value={voiceRate}
+                    onChange={(e) => setVoiceRate(parseFloat(e.target.value))}
+                    className="voice-speed-slider"
+                  />
+                  <div className="speed-labels">
+                    <span>0.5x</span>
+                    <span>1.0x</span>
+                    <span>2.0x</span>
+                  </div>
+                </div>
+                <div className="voice-setting-group">
+                  <label htmlFor="voiceSelect">Voice</label>
+                  <select
+                    id="voiceSelect"
+                    value={selectedVoice?.name || ''}
+                    onChange={(e) => {
+                      const voice = availableVoices.find(v => v.name === e.target.value)
+                      if (voice) setSelectedVoice(voice)
+                    }}
+                    className="voice-select"
+                  >
+                    {availableVoices.map((voice) => (
+                      <option key={voice.name} value={voice.name}>
+                        {voice.name} ({voice.lang})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="chat-messages" id="chatMessages">
             {messages.map((message, index) => {
@@ -248,6 +561,33 @@ export default function DigitalTwinChat() {
                 >
                   <div className="message-content">
                     <p>{message.content}</p>
+                    {message.role === 'assistant' && (
+                      <button
+                        className={`voice-btn ${currentSpeakingIndex === index ? 'speaking' : ''}`}
+                        onClick={() => {
+                          if (currentSpeakingIndex === index) {
+                            stopSpeaking()
+                          } else {
+                            speakMessage(message.content, index)
+                          }
+                        }}
+                        aria-label={currentSpeakingIndex === index ? 'Stop speaking' : 'Read message aloud'}
+                        title={currentSpeakingIndex === index ? 'Stop' : 'Listen'}
+                      >
+                        {currentSpeakingIndex === index ? (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="6" y="4" width="4" height="16" rx="1"/>
+                            <rect x="14" y="4" width="4" height="16" rx="1"/>
+                          </svg>
+                        ) : (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                          </svg>
+                        )}
+                      </button>
+                    )}
                   </div>
                 </div>
               )
@@ -281,6 +621,27 @@ export default function DigitalTwinChat() {
           )}
           
           <form className="chat-input-form" onSubmit={handleSubmit}>
+            <button
+              type="button"
+              className={`chat-mic-btn ${isListening ? 'listening' : ''}`}
+              onClick={() => {
+                if (isListening) {
+                  stopListening()
+                } else {
+                  startListening()
+                }
+              }}
+              disabled={isLoading}
+              aria-label={isListening ? 'Stop listening' : 'Start voice input'}
+              title={isListening ? 'Stop listening' : 'Voice input'}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </button>
             <input 
               type="text" 
               className="chat-input" 
