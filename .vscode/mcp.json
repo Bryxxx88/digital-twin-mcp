@@ -2,9 +2,7 @@
   "servers": {
     "digital-twin-production": {
       "type": "http",
-      "url": "https://digital-twin-mcp-git-main-john-bryx-jovellanos-projects.vercel.app/api/mcp",
-      "timeout": 30000,
-      "description": "Digital Twin RAG MCP Server - Production"
+      "url": "https://digital-twin-mcp-git-main-john-bryx-jovellanos-projects.vercel.app/api/mcp"
     }
   }
 }

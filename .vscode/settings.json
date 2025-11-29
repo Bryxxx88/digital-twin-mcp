@@ -1,0 +1,10 @@
+{
+    "chat.mcp.serverSampling": {
+        "digital-twin-mcp/.vscode/mcp.json: digital-twin-production": {
+            "allowedModels": [
+                "copilot/gpt-5-mini",
+                "copilot/claude-sonnet-4.5"
+            ]
+        }
+    }
+}

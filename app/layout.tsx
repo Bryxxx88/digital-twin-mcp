@@ -1,21 +1,40 @@
-import type { Metadata } from "next";
-import "./globals.css";
+// /app/layout.tsx
+import './globals.css'
+import Nav from './Nav'
+import Footer from './Footer'
+import type { ReactNode } from 'react'
 
-export const metadata: Metadata = {
-  title: "John Bryx's Digital Twin - MCP Server",
-  description: "AI-powered interview preparation system using RAG technology",
-};
+export const metadata = {
+  title: 'John Bryx Torralba Jovellanos | Portfolio',
+  description: 'Professional portfolio - John Bryx Torralba Jovellanos',
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (theme === 'light' || (!theme && !prefersDark)) {
+                  document.body.classList.add('light-mode');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body>
+        <div className="site">
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
-  );
+  )
 }
+

@@ -1,131 +1,177 @@
-'use client';
+// /app/page.tsx
+import RevealSection from './RevealSection'
+import DigitalTwinChat from './DigitalTwinChat'
+import Image from 'next/image'
 
-import { useState } from 'react';
 
-export default function Home() {
-  const [query, setQuery] = useState('');
-  const [response, setResponse] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const handleQuery = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!query.trim()) return;
-
-    setLoading(true);
-    setResponse('');
-
-    try {
-      const res = await fetch('/api/mcp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          action: 'query',
-          query: query
-        })
-      });
-
-      const data = await res.json();
-      
-      if (data.success) {
-        setResponse(data.data.answer);
-      } else {
-        setResponse(`Error: ${data.error}`);
-      }
-    } catch (error) {
-      setResponse(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            🤖 John Bryx&apos;s Digital Twin
-          </h1>
-          <p className="text-xl text-gray-600 mb-2">
-            AI-Powered Interview Preparation System
-          </p>
-          <p className="text-sm text-gray-500">
-            MCP Server for Claude Desktop & VS Code
-          </p>
-        </div>
+    <>
+      <RevealSection id="home" className="hero">
+        <div className="hero-inner">
+          <div className="hero-left">
+            <h1 className="hero-title">
+              Hello, I'm
+              <span className="name">John Bryx Torralba Jovellanos</span>
+            </h1>
+            
+            <p className="hero-sub">
+              Crafting elegant digital experiences through innovative web development. 
+              Specializing in full-stack solutions that blend aesthetics with functionality.
+            </p>
 
-        {/* Chat Interface */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-          <form onSubmit={handleQuery} className="space-y-4">
-            <div>
-              <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-2">
-                Ask me anything about John Bryx&apos;s background:
-              </label>
-              <textarea
-                id="query"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="E.g., Tell me about your University Clearance Management System project"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
-                rows={3}
-                disabled={loading}
-              />
+            <div className="hero-ctas">
+              <a href="#projects" className="btn btn-primary">
+                View Projects
+              </a>
+              <a href="#contact" className="btn btn-outline">
+                Get in Touch
+              </a>
             </div>
-            <button
-              type="submit"
-              disabled={loading || !query.trim()}
-              className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-            >
-              {loading ? '🔄 Thinking...' : '💬 Ask Question'}
-            </button>
-          </form>
+          </div>
 
-          {/* Response */}
-          {response && (
-            <div className="mt-6 p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border border-indigo-100">
-              <h3 className="text-sm font-semibold text-indigo-900 mb-2">
-                🤖 John Bryx:
-              </h3>
-              <p className="text-gray-800 whitespace-pre-wrap leading-relaxed">
-                {response}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Example Questions */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">
-            💭 Try asking:
-          </h2>
-          <div className="grid md:grid-cols-2 gap-3">
-            {[
-              'What are your technical skills?',
-              'Tell me about your Laravel experience',
-              'Describe your education background',
-              'What are your career goals?',
-              'Tell me about the University Clearance System',
-              'What AI/ML experience do you have?'
-            ].map((q, i) => (
-              <button
-                key={i}
-                onClick={() => setQuery(q)}
-                className="text-left p-3 bg-gray-50 hover:bg-indigo-50 rounded-lg text-sm text-gray-700 hover:text-indigo-700 transition-colors border border-gray-200 hover:border-indigo-200"
-              >
-                {q}
-              </button>
-            ))}
+          <div className="photo-placeholder">
+            <Image
+              src="/bryxxx.jpg"
+              alt="John Bryx Torralba Jovellanos"
+              width={420}
+              height={420}
+              priority
+            />
           </div>
         </div>
+      </RevealSection>
 
-        {/* Footer */}
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>Built with Next.js 15, TypeScript, Groq API, and Tailwind CSS</p>
-          <p className="mt-2">
-            MCP Server • AI Agent Developer Workshop • Week 8 Project
+      <RevealSection id="aboutme" className="container">
+        <h2 className="section-title">About Me</h2>
+        <div className="about-main-box">
+          <p>
+            I'm a passionate IT student specializing in Website and Full-Stack Development at St. Paul University Philippines. 
+            My journey in technology is driven by a commitment to creating meaningful digital solutions that make a difference. 
+            I thrive on transforming complex challenges into elegant, user-centric applications that deliver real value.
           </p>
         </div>
-      </div>
-    </div>
-  );
+        <div className="about-side">
+          <div className="about-side-box">
+            <h3>Education</h3>
+            <p>Bachelor of Science in Information Technology<br/>St. Paul University Philippines</p>
+          </div>
+          <div className="about-side-box">
+            <h3>Expertise</h3>
+            <p>Website Development<br/>Full Stack Development<br/>UI/UX Design</p>
+          </div>
+          <div className="about-side-box">
+            <h3>Philosophy</h3>
+            <p>Building accessible, intuitive interfaces while continuously evolving through emerging technologies.</p>
+          </div>
+        </div>
+      </RevealSection>
+
+      <RevealSection id="skills" className="container">
+        <h2 className="section-title">Skills & Expertise</h2>
+        <div className="skills-grid">
+          <div className="skill-box">
+            <h3>Frontend Development</h3>
+            <p>Creating responsive, accessible interfaces with React, Next.js, HTML5, CSS3, and modern JavaScript frameworks.</p>
+          </div>
+          <div className="skill-box">
+            <h3>Backend Development</h3>
+            <p>Building scalable server architectures using Node.js, Express, and RESTful API design principles.</p>
+          </div>
+          <div className="skill-box">
+            <h3>Database Management</h3>
+            <p>Designing efficient data structures with MySQL, PostgreSQL, and MongoDB for optimal performance.</p>
+          </div>
+          <div className="skill-box">
+            <h3>Development Tools</h3>
+            <p>Version control with Git, modern IDEs, CI/CD pipelines, and cloud deployment platforms.</p>
+          </div>
+          <div className="skill-box">
+            <h3>UI/UX Design</h3>
+            <p>Crafting intuitive user experiences with attention to detail, accessibility, and visual hierarchy.</p>
+          </div>
+          <div className="skill-box">
+            <h3>Collaboration</h3>
+            <p>Effective communication, agile methodologies, and continuous learning mindset for team success.</p>
+          </div>
+        </div>
+      </RevealSection>
+
+      <RevealSection id="projects" className="container">
+        <h2 className="section-title">Featured Projects</h2>
+        <div className="project-box">
+          <h3>University Clearance Management System</h3>
+          <p>
+            A comprehensive decision support system designed to streamline the clearance process at St. Paul University Philippines. 
+            Features automated workflows, real-time tracking, and intelligent analytics for enhanced administrative efficiency.
+          </p>
+          <div className="tech-badges">
+            <span className="tech-badge">PHP</span>
+            <span className="tech-badge">Laravel</span>
+            <span className="tech-badge">Python</span>
+            <span className="tech-badge">MySQL</span>
+            <span className="tech-badge">REST API</span>
+          </div>
+        </div>
+      </RevealSection>
+
+      <RevealSection id="digitaltwin" className="container">
+        <h2 className="section-title">AI Digital Twin</h2>
+        <div className="digital-twin-box">
+          <div className="digital-twin-header">
+            <div className="digital-twin-status">
+              <span className="status-indicator"></span>
+              <span className="status-text">Online & Ready</span>
+            </div>
+            <p className="digital-twin-intro">
+              Ask my AI-powered digital twin anything about my experience, skills, projects, or background. 
+              It's trained on my portfolio data and can provide instant, intelligent responses 24/7.
+            </p>
+          </div>
+          
+          <DigitalTwinChat />
+          
+          <div className="digital-twin-features">
+            <div className="feature-item">
+              <span className="feature-icon">⚡</span>
+              <span className="feature-text">Instant Responses</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">🧠</span>
+              <span className="feature-text">RAG-Powered AI</span>
+            </div>
+            <div className="feature-item">
+              <span className="feature-icon">🔒</span>
+              <span className="feature-text">Privacy First</span>
+            </div>
+          </div>
+        </div>
+      </RevealSection>
+
+      <RevealSection id="contact" className="container">
+        <h2 className="section-title">Let's Connect</h2>
+        <div className="contact-box">
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's create something amazing together!</p>
+          <div className="contact-socials">
+            <div className="contact-email">
+              <span className="contact-email-icon">@</span>
+              bryx.jovellanos@gmail.com
+            </div>
+            <a href="https://www.linkedin.com/in/john-bryx-jovellanos-731872397/" className="contact-social" target="_blank" rel="noopener noreferrer">
+              <span className="contact-social-icon">in</span>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Bryxxx88" className="contact-social" target="_blank" rel="noopener noreferrer">
+              <span className="contact-social-icon">gh</span>
+              GitHub
+            </a>
+            <a href="https://www.facebook.com/johnbryx.jovellanos88" className="contact-social" target="_blank" rel="noopener noreferrer">
+              <span className="contact-social-icon">fb</span>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </RevealSection>
+    </>
+  )
 }
