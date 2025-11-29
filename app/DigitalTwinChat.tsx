@@ -103,6 +103,8 @@ export default function DigitalTwinChat() {
 
   // Load available voices
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const loadVoices = () => {
       const voices = window.speechSynthesis.getVoices()
       setAvailableVoices(voices)
@@ -122,6 +124,8 @@ export default function DigitalTwinChat() {
 
   // Load chat history from localStorage on mount
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const savedMessages = localStorage.getItem('chatHistory')
     if (savedMessages) {
       try {
@@ -135,6 +139,8 @@ export default function DigitalTwinChat() {
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     if (messages.length > 1) { // Only save if there are more than just the initial message
       localStorage.setItem('chatHistory', JSON.stringify(messages))
     }
@@ -142,7 +148,7 @@ export default function DigitalTwinChat() {
 
   const handleClose = () => {
     // Stop any ongoing speech
-    if (window.speechSynthesis.speaking) {
+    if (typeof window !== 'undefined' && window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel()
       setIsSpeaking(false)
       setCurrentSpeakingIndex(null)
@@ -161,7 +167,9 @@ export default function DigitalTwinChat() {
       content: "Hi! I'm John Bryx's AI assistant. Ask me anything about his experience, skills, or projects."
     }
     setMessages([initialMessage])
-    localStorage.removeItem('chatHistory')
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('chatHistory')
+    }
     setShowHistory(false)
   }
   
@@ -328,6 +336,8 @@ export default function DigitalTwinChat() {
   }
 
   const speakMessage = (text: string, messageIndex: number) => {
+    if (typeof window === 'undefined') return
+    
     // Stop any ongoing speech
     if (window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel()
@@ -363,6 +373,8 @@ export default function DigitalTwinChat() {
   }
 
   const stopSpeaking = () => {
+    if (typeof window === 'undefined') return
+    
     if (window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel()
       setIsSpeaking(false)
@@ -398,7 +410,7 @@ export default function DigitalTwinChat() {
   // Cleanup speech on unmount
   useEffect(() => {
     return () => {
-      if (window.speechSynthesis.speaking) {
+      if (typeof window !== 'undefined' && window.speechSynthesis.speaking) {
         window.speechSynthesis.cancel()
       }
     }

@@ -18,6 +18,11 @@ export default function Nav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false) // Placeholder for auth state
 
   useEffect(() => {
+    // Scroll to top on page load/refresh
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+    
     const onScroll = () => setScrolled(window.scrollY > 20)
     onScroll()
     window.addEventListener('scroll', onScroll)
@@ -25,6 +30,8 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    
     const theme = localStorage.getItem('theme')
     const prefersDark = window.matchMedia(
       '(prefers-color-scheme: dark)'
@@ -63,6 +70,8 @@ export default function Nav() {
   }, [])
 
   const toggleTheme = () => {
+    if (typeof window === 'undefined') return
+    
     const newIsDark = !isDark
     setIsDark(newIsDark)
 
@@ -78,10 +87,10 @@ export default function Nav() {
   return (
     <header className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-inner">
-        <div className="nav-left">
+        <a href="#home" className="nav-left">
           <span className="nav-left-text">John Bryx Torralba Jovellanos</span>
           <span className="nav-left-binary">01001010 01000010 01001010</span>
-        </div>
+        </a>
 
         <div className="nav-right">
           <nav className={`nav-links ${open ? 'open' : ''}`}>

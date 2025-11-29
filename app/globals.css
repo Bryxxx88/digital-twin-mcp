@@ -159,6 +159,8 @@ body.light-mode .navbar {
   position: relative;
   display: inline-block;
   min-height: 1.5em;
+  text-decoration: none;
+  color: inherit;
 }
 
 .nav-left-text {
