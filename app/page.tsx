@@ -43,6 +43,27 @@ export default function HomePage() {
         </div>
       </RevealSection>
 
+      <RevealSection id="stats" className="stats-section">
+        <div className="stats-container">
+          <div className="stat-item">
+            <div className="stat-value">4th Year</div>
+            <div className="stat-label">BSIT Student | Graduating 2026</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">2+</div>
+            <div className="stat-label">Major Projects Deployed</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">90%</div>
+            <div className="stat-label">Process Improvement Achieved</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-value">500+</div>
+            <div className="stat-label">Students Served</div>
+          </div>
+        </div>
+      </RevealSection>
+
       <RevealSection id="aboutme" className="container">
         <h2 className="section-title">About Me</h2>
         <div className="about-main-box">
@@ -73,27 +94,73 @@ export default function HomePage() {
         <div className="skills-grid">
           <div className="skill-box">
             <h3>Frontend Development</h3>
-            <p>Creating responsive, accessible interfaces with React, Next.js, HTML5, CSS3, and modern JavaScript frameworks.</p>
+            <ul>
+              <li>React & Next.js</li>
+              <li>HTML5 & CSS3</li>
+              <li>JavaScript frameworks</li>
+              <li>Responsive design</li>
+              <li>Accessibility standards</li>
+            </ul>
           </div>
           <div className="skill-box">
             <h3>Backend Development</h3>
-            <p>Building scalable server architectures using Node.js, Express, and RESTful API design principles.</p>
+            <ul>
+              <li>Node.js & Express</li>
+              <li>RESTful API design</li>
+              <li>Server architecture</li>
+              <li>MVC principles</li>
+              <li>PHP & Laravel</li>
+            </ul>
           </div>
           <div className="skill-box">
             <h3>Database Management</h3>
-            <p>Designing efficient data structures with MySQL, PostgreSQL, and MongoDB for optimal performance.</p>
+            <ul>
+              <li>MySQL</li>
+              <li>PostgreSQL</li>
+              <li>MongoDB</li>
+              <li>Data structure design</li>
+              <li>Query optimization</li>
+            </ul>
           </div>
           <div className="skill-box">
             <h3>Development Tools</h3>
-            <p>Version control with Git, modern IDEs, CI/CD pipelines, and cloud deployment platforms.</p>
+            <ul>
+              <li>Git version control</li>
+              <li>Modern IDEs</li>
+              <li>CI/CD basics</li>
+              <li>Vercel & Firebase</li>
+              <li>Cloud deployment</li>
+            </ul>
           </div>
           <div className="skill-box">
             <h3>UI/UX Design</h3>
-            <p>Crafting intuitive user experiences with attention to detail, accessibility, and visual hierarchy.</p>
+            <ul>
+              <li>User experience design</li>
+              <li>Visual hierarchy</li>
+              <li>Accessibility focus</li>
+              <li>Design consistency</li>
+              <li>Bootstrap & Tailwind</li>
+            </ul>
           </div>
           <div className="skill-box">
-            <h3>Collaboration</h3>
-            <p>Effective communication, agile methodologies, and continuous learning mindset for team success.</p>
+            <h3>AI/ML Development</h3>
+            <ul>
+              <li>RAG systems</li>
+              <li>Vector databases</li>
+              <li>LLM integration</li>
+              <li>Groq API</li>
+              <li>Upstash Vector</li>
+            </ul>
+          </div>
+          <div className="skill-box">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li>Problem-solving</li>
+              <li>Team collaboration</li>
+              <li>Self-learning</li>
+              <li>Communication</li>
+              <li>Project management</li>
+            </ul>
           </div>
         </div>
       </RevealSection>
@@ -103,8 +170,7 @@ export default function HomePage() {
         <div className="project-box">
           <h3>University Clearance Management System</h3>
           <p>
-            A comprehensive decision support system designed to streamline the clearance process at St. Paul University Philippines. 
-            Features automated workflows, real-time tracking, and intelligent analytics for enhanced administrative efficiency.
+            Full-stack web application for automating university clearance workflows with decision support logic, featuring automated validation, real-time tracking, role-based access control, and responsive Bootstrap interface to reduce processing time and enhance administrative efficiency.
           </p>
           <div className="tech-badges">
             <span className="tech-badge">PHP</span>
@@ -112,6 +178,20 @@ export default function HomePage() {
             <span className="tech-badge">Python</span>
             <span className="tech-badge">MySQL</span>
             <span className="tech-badge">REST API</span>
+          </div>
+        </div>
+        <div className="project-box">
+          <h3>Digital Twin MCP Server</h3>
+          <p>
+            AI-powered intelligent career assistant system leveraging RAG architecture and Groq LLM, featuring real-time conversational interface with voice input/output capabilities, persistent chat history, and responsive Next.js design for 24/7 professional information retrieval.
+          </p>
+          <div className="tech-badges">
+            <span className="tech-badge">Next.js</span>
+            <span className="tech-badge">RAG</span>
+            <span className="tech-badge">GROQ</span>
+            <span className="tech-badge">Typescript</span>
+            <span className="tech-badge">Upstash Vector</span>
+            <span className="tech-badge">Python</span>
           </div>
         </div>
       </RevealSection>

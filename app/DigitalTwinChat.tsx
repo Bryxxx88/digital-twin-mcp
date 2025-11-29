@@ -31,7 +31,17 @@ export default function DigitalTwinChat() {
   const [isListening, setIsListening] = useState(false)
   const latestUserMessageRef = useRef<HTMLDivElement>(null)
   const speechSynthesisRef = useRef<SpeechSynthesisUtterance | null>(null)
-  const recognitionRef = useRef<any>(null)
+  const recognitionRef = useRef<{
+    start: () => void;
+    stop: () => void;
+    onstart: (() => void) | null;
+    onresult: ((event: any) => void) | null;
+    onerror: ((event: any) => void) | null;
+    onend: (() => void) | null;
+    continuous: boolean;
+    interimResults: boolean;
+    lang: string;
+  } | null>(null)
   
   // Initialize speech recognition
   useEffect(() => {
@@ -52,6 +62,15 @@ export default function DigitalTwinChat() {
           const transcript = event.results[0][0].transcript
           console.log('Transcript:', transcript)
           setInput(transcript)
+          
+          // Wait 2 seconds before automatically submitting the question
+          setTimeout(() => {
+            const submitEvent = new Event('submit', { bubbles: true, cancelable: true })
+            const form = document.querySelector('.chat-input-form') as HTMLFormElement
+            if (form) {
+              form.dispatchEvent(submitEvent)
+            }
+          }, 2000)
         }
         
         recognition.onerror = (event: any) => {
