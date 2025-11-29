@@ -2,6 +2,7 @@
 import './globals.css'
 import Nav from './Nav'
 import Footer from './Footer'
+import Providers from './providers'
 import type { ReactNode } from 'react'
 
 export const metadata = {
@@ -28,11 +29,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <div className="site">
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <Providers>
+          <div className="site">
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   )

@@ -1773,3 +1773,69 @@ body.light-mode .navbar {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-secondary);
 }
+
+/* --- Sign In Page Styles --- */
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  background: var(--bg);
+}
+
+.signin-box {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-2xl);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+.signin-box h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--space-xs);
+  text-align: center;
+}
+
+.signin-box p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+}
+
+.google-signin-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.google-signin-btn:hover {
+  background: var(--box-hover);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-accent);
+}
+
+.google-signin-btn:active {
+  transform: translateY(0);
+}
