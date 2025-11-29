@@ -7,6 +7,7 @@ import Image from 'next/image'
 export default function HomePage() {
   return (
     <>
+      <DigitalTwinChat />
       <RevealSection id="home" className="hero">
         <div className="hero-inner">
           <div className="hero-left">
@@ -111,39 +112,6 @@ export default function HomePage() {
             <span className="tech-badge">Python</span>
             <span className="tech-badge">MySQL</span>
             <span className="tech-badge">REST API</span>
-          </div>
-        </div>
-      </RevealSection>
-
-      <RevealSection id="digitaltwin" className="container">
-        <h2 className="section-title">AI Digital Twin</h2>
-        <div className="digital-twin-box">
-          <div className="digital-twin-header">
-            <div className="digital-twin-status">
-              <span className="status-indicator"></span>
-              <span className="status-text">Online & Ready</span>
-            </div>
-            <p className="digital-twin-intro">
-              Ask my AI-powered digital twin anything about my experience, skills, projects, or background. 
-              It's trained on my portfolio data and can provide instant, intelligent responses 24/7.
-            </p>
-          </div>
-          
-          <DigitalTwinChat />
-          
-          <div className="digital-twin-features">
-            <div className="feature-item">
-              <span className="feature-icon">⚡</span>
-              <span className="feature-text">Instant Responses</span>
-            </div>
-            <div className="feature-item">
-              <span className="feature-icon">🧠</span>
-              <span className="feature-text">RAG-Powered AI</span>
-            </div>
-            <div className="feature-item">
-              <span className="feature-icon">🔒</span>
-              <span className="feature-text">Privacy First</span>
-            </div>
           </div>
         </div>
       </RevealSection>
