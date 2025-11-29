@@ -157,8 +157,19 @@ body.light-mode .navbar {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
   min-height: 1.5em;
+}
+
+.nav-left .theme-toggle {
+  position: static;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  flex-shrink: 0;
 }
 
 .nav-left-text {

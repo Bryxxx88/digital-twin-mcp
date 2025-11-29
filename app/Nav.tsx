@@ -78,6 +78,14 @@ export default function Nav() {
     <header className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-inner">
         <div className="nav-left">
+          <button
+            className="theme-toggle"
+            aria-label="Toggle theme"
+            onClick={toggleTheme}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <span>{isDark ? '◐' : '◑'}</span>
+          </button>
           <span className="nav-left-text">John Bryx Torralba Jovellanos</span>
           <span className="nav-left-binary">01001010 01000010 01001010</span>
         </div>
@@ -100,15 +108,6 @@ export default function Nav() {
               )
             })}
           </nav>
-
-          <button
-            className="theme-toggle"
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            <span>{isDark ? '◐' : '◑'}</span>
-          </button>
 
           <button
             className="nav-hamburger"
