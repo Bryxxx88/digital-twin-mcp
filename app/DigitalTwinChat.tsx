@@ -674,6 +674,8 @@ export default function DigitalTwinChat() {
               </svg>
             </button>
             <input 
+              id="chat-input"
+              name="chat-input"
               type="text" 
               className="chat-input" 
               value={input}
