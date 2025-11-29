@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} John Bryx Torralba Jovellanos • Crafted with <span className="footer-heart">♥</span> and AI
+            © {currentYear} John Bryx Torralba Jovellanos. All rights reserved. Crafted with <span className="footer-heart">♥</span> and AI
           </p>
           <p className="footer-tagline">Building intelligent digital experiences, one prompt at a time.</p>
         </div>
