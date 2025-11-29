@@ -1916,6 +1916,33 @@ body.light-mode .navbar {
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.signin-close-btn {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--box-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.signin-close-btn:hover {
+  background: var(--box-hover);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.1);
 }
 
 .signin-box h1 {

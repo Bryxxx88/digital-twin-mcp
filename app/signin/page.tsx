@@ -1,9 +1,13 @@
 import { signIn } from "@/auth"
+import Link from "next/link"
 
 export default function SignInPage() {
   return (
     <div className="signin-container">
       <div className="signin-box">
+        <Link href="/" className="signin-close-btn" aria-label="Close and return home">
+          ✕
+        </Link>
         <h1>Welcome to Digital Twin</h1>
         <p>Sign in with your Google account to chat with John Bryx's AI assistant</p>
         
